@@ -132,7 +132,7 @@ export function Contact() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-input-background border rounded-lg focus:outline-none focus:ring-2 transition-all ${
+                      className={`w-full px-4 py-3 bg-input-background border rounded-lg dark:bg-[#171717] focus:outline-none focus:ring-2 transition-all ${
                         errors.name
                           ? "border-destructive focus:ring-destructive/50"
                           : "border-input focus:ring-primary/50"
@@ -160,7 +160,7 @@ export function Contact() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 bg-input-background border rounded-lg focus:outline-none focus:ring-2 transition-all ${
+                      className={`w-full px-4 py-3 bg-input-background border rounded-lg dark:bg-[#171717] focus:outline-none focus:ring-2 transition-all ${
                         errors.email
                           ? "border-destructive focus:ring-destructive/50"
                           : "border-input focus:ring-primary/50"
@@ -188,7 +188,7 @@ export function Contact() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className={`w-full px-4 py-3 bg-input-background border rounded-lg focus:outline-none focus:ring-2 transition-all resize-none ${
+                      className={`w-full px-4 py-3 bg-input-background border rounded-lg dark:bg-[#171717] focus:outline-none focus:ring-2 transition-all resize-none ${
                         errors.message
                           ? "border-destructive focus:ring-destructive/50"
                           : "border-input focus:ring-primary/50"
