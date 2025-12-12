@@ -5,7 +5,7 @@ import { Code2, Zap, Layout } from "lucide-react";
 export function About() {
   const stats = [
     { value: "3+", label: "Years Experience" },
-    { value: "10+", label: "Projects Completed" },
+    { value: "15+", label: "Projects Completed" },
     { value: "100%", label: "Client Satisfaction" },
   ];
 
@@ -40,27 +40,30 @@ export function About() {
           {/* Left Content - Text */}
           <div className="lg:col-span-7">
             <h3 className="mb-6 text-2xl md:text-3xl font-semibold">
-              Passionate about building exceptional digital experiences
+              Get to Know Me
             </h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                With over 3 years of experience in fullstack web development,
-                I&apos;ve had the privilege of working on diverse projects that
-                range from complex enterprise applications to sleek consumer
-                products.
+                I’m a full-stack web developer with 3–4 years of hands-on
+                experience building modern web applications. I work comfortably
+                across the stack—crafting responsive front-end interfaces and
+                developing reliable back-end systems, including REST/GraphQL
+                APIs. I focus on writing clean, maintainable code and building
+                products that feel fast, smooth, and user-friendly.
               </p>
               <p>
-                My expertise lies in building modern, scalable web applications
-                using cutting-edge technologies like Next.js, React, Node.js,
-                and GraphQL. I&apos;m passionate about writing clean,
-                maintainable code and creating seamless user experiences.
+                Alongside development, I’m deeply interested in cybersecurity. I
+                study common web vulnerabilities and how to prevent them, and
+                I’m working toward becoming a Web Application Penetration
+                Tester. I believe strong applications are not only functional
+                and beautiful, but also secure by design.
               </p>
               <p>
-                I believe in the power of continuous learning and stay updated
-                with the latest trends in web development. When I&apos;m not
-                coding, you&apos;ll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community.
+                I’m currently an Inter 1st Year (Science) student at Dhaka
+                College. Outside of study and coding, I explore new
+                technologies, follow real-world security research, and keep
+                improving through consistent practice—because my goals are big,
+                and I’m committed to reaching them.
               </p>
             </div>
 

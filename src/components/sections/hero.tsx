@@ -107,10 +107,10 @@ export function Hero({ profileImageUrl }: HeroProps) {
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
-              Building secure, scalable web applications with Next.js, React,
-              Node.js, and REST/GraphQL APIs. Specializing in cybersecurity best
-              practices, secure architecture, and protecting digital assets.
+            <p className="text-lg  text-muted-foreground mb-8 max-w-2xl mx-auto lg:mx-0">
+              Full-stack developer crafting modern web apps with Next.js, React,
+              and Node.js—reliable APIs, clean architecture, and security-first
+              thinking.
             </p>
 
             {/* CTAs */}
@@ -183,7 +183,7 @@ export function Hero({ profileImageUrl }: HeroProps) {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-success"></span>
                   </div>
-                  <span className="text-sm">Available for Hire</span>
+                  <span className="text-sm">Open to opportunities</span>
                 </div>
               </div>
 
