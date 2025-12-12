@@ -53,7 +53,7 @@ export function Hero({ profileImageUrl }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden"
+      className="relative min-h-screen flex items-center pb-7 pt-20 overflow-hidden"
     >
       {/* Enhanced Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none"></div>
@@ -86,7 +86,7 @@ export function Hero({ profileImageUrl }: HeroProps) {
             </div>
 
             <div className="mb-6">
-              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-2">
+              <h1 className="text-2xl md:text-5xl  font-bold mb-2">
                 <span className="text-foreground">Hello, I&apos;m </span>
                 <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
                   {displayedName}
@@ -99,11 +99,11 @@ export function Hero({ profileImageUrl }: HeroProps) {
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-6">
               <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm">
                 <Code2 className="w-4 h-4 text-primary" />
-                <span className="text-sm">Fullstack Developer</span>
+                <span className="text-sm">Fullstack Web Developer</span>
               </div>
               <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm">
                 <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm">Cyber Security Specialist</span>
+                <span className="text-sm">Cyber Security Enthusiast</span>
               </div>
             </div>
 
