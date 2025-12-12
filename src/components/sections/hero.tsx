@@ -86,7 +86,7 @@ export function Hero({ profileImageUrl }: HeroProps) {
             </div>
 
             <div className="mb-6">
-              <h1 className="text-2xl md:text-5xl  font-bold mb-2">
+              <h1 className="text-3xl md:text-5xl  font-bold mb-2">
                 <span className="text-foreground">Hello, I&apos;m </span>
                 <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
                   {displayedName}
