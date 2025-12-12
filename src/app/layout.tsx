@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Samiul Islam - Fullstack Web Developer",
-  description: "Portfolio website of Samiul Islam, a Fullstack Web Developer specializing in Next.js, React, Node.js, and modern web technologies.",
+  description:
+    "Portfolio website of Samiul Islam, a Fullstack Web Developer specializing in Next.js, React, Node.js, and modern web technologies.",
 };
 
 export default function RootLayout({
@@ -26,4 +27,3 @@ export default function RootLayout({
     </html>
   );
 }
-

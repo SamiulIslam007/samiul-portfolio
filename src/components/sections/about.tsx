@@ -92,7 +92,9 @@ export function About() {
                       <strength.icon className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="mb-2 text-lg font-semibold">{strength.title}</h4>
+                      <h4 className="mb-2 text-lg font-semibold">
+                        {strength.title}
+                      </h4>
                       <p className="text-sm text-muted-foreground">
                         {strength.description}
                       </p>
@@ -112,7 +114,9 @@ export function About() {
                   <div className="text-sm text-muted-foreground">
                     Specialized in
                   </div>
-                  <div className="text-lg font-semibold">Fullstack Development</div>
+                  <div className="text-lg font-semibold">
+                    Fullstack Development
+                  </div>
                 </div>
               </div>
             </div>
@@ -122,4 +126,3 @@ export function About() {
     </section>
   );
 }
-

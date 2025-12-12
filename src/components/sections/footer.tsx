@@ -2,11 +2,16 @@
 
 import { Github, Linkedin, Facebook, Heart } from "lucide-react";
 import { scrollToSection } from "@/lib/utils/scroll";
+import { socialLinks } from "../ui/social-links";
+import Link from "next/link";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const handleNavClick = (e: React.MouseEvent<HTMLButtonElement>, sectionId: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    sectionId: string
+  ) => {
     e.preventDefault();
     scrollToSection(sectionId);
   };
@@ -47,33 +52,18 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-lg font-semibold">Connect</h4>
             <div className="flex gap-3">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
+              {socialLinks.map(({ name, href, icon: Icon }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg border border-border"
+                >
+                  <Icon className="w-5 h-5" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
@@ -83,13 +73,8 @@ export function Footer() {
           <p className="text-sm text-muted-foreground text-center sm:text-left">
             &copy; {currentYear} Samiul Islam. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-destructive fill-destructive" /> using Next.js
-            & Tailwind CSS
-          </p>
         </div>
       </div>
     </footer>
   );
 }
-

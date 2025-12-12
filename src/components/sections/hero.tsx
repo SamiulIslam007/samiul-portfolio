@@ -1,15 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {
-  ArrowRight,
-  Github,
-  Linkedin,
-  Facebook,
-  Shield,
-  Code2,
-} from "lucide-react";
+import { Code2, Shield, ArrowRight, Icon } from "lucide-react";
+import { socialLinks } from "../ui/social-links";
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeroProps {
   profileImageUrl: string;
@@ -18,9 +13,9 @@ interface HeroProps {
 export function Hero({ profileImageUrl }: HeroProps) {
   const [displayedName, setDisplayedName] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const fullName = "Samiul Islam";
-  const typingSpeed = 100; // milliseconds per character
-  const pauseBeforeRestart = 2000; // pause at the end before restarting
+  const fullName = "Samiul Islam.";
+  const typingSpeed = 130; // milliseconds per character
+  const pauseBeforeRestart = 1500; // pause at the end before restarting
 
   useEffect(() => {
     if (currentIndex < fullName.length) {
@@ -91,11 +86,9 @@ export function Hero({ profileImageUrl }: HeroProps) {
             </div>
 
             <div className="mb-6">
-              <p className="text-lg text-muted-foreground mb-2">
-                Hello, I&apos;m
-              </p>
-              <h1 className="mb-2 min-h-[1.2em]">
-                <span className="bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold mb-2">
+                <span className="text-foreground">Hello, I&apos;m </span>
+                <span className="bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent">
                   {displayedName}
                   <span className="animate-pulse">|</span>
                 </span>
@@ -139,33 +132,18 @@ export function Hero({ profileImageUrl }: HeroProps) {
 
             {/* Social Icons */}
             <div className="flex gap-4 justify-center lg:justify-start">
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg border border-border"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg border border-border"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg border border-border"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
+              {socialLinks.map(({ name, href, icon: Icon }) => (
+                <Link
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  className="p-3 rounded-lg bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 hover:shadow-lg border border-border"
+                >
+                  <Icon className="w-5 h-5" />
+                </Link>
+              ))}
             </div>
           </div>
 

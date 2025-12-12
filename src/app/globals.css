@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --font-size: 16px;
@@ -28,6 +29,8 @@
     --input-background: #fff;
     --ring: #06f;
     --radius: 0.5rem;
+    --font-dancing-script: "Dancing Script", cursive;
+
   }
 
   .dark {

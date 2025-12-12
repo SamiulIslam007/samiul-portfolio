@@ -8,7 +8,10 @@ import { scrollToSection } from "@/lib/utils/scroll";
  * Shows inline navigation links with hover effects
  */
 export function NavbarDesktop() {
-  const handleNavClick = (e: React.MouseEvent<HTMLButtonElement>, sectionId: string) => {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    sectionId: string
+  ) => {
     e.preventDefault();
     scrollToSection(sectionId);
   };
@@ -28,4 +31,3 @@ export function NavbarDesktop() {
     </nav>
   );
 }
-

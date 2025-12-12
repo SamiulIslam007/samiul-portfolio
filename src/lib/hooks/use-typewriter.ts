@@ -52,8 +52,16 @@ export function useTypewriter(
         }
       };
     }
-  }, [currentText, isDeleting, isPaused, currentWordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
+  }, [
+    currentText,
+    isDeleting,
+    isPaused,
+    currentWordIndex,
+    words,
+    typingSpeed,
+    deletingSpeed,
+    delayBetweenWords,
+  ]);
 
   return currentText;
 }
-

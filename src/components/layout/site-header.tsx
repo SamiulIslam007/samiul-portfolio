@@ -6,6 +6,12 @@ import { NavbarDesktop } from "./navbar-desktop";
 import { NavbarMobile } from "./navbar-mobile";
 import { scrollToSection } from "@/lib/utils/scroll";
 import { Button } from "@/components/ui/button";
+import { Pacifico } from "next/font/google";
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 /**
  * Main site header component
@@ -65,11 +71,11 @@ export function SiteHeader() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center font-semibold text-xl justify-between h-16 md:h-20">
           {/* Logo */}
           <button
             onClick={handleLogoClick}
-            className="text-xl md:text-2xl tracking-tight hover:text-primary transition-colors font-medium"
+            className={`${pacifico.className} text-xl md:text-2xl tracking-tight font-semibold`}
           >
             Samiul Islam
           </button>
@@ -102,4 +108,3 @@ export function SiteHeader() {
     </header>
   );
 }
-

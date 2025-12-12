@@ -68,20 +68,20 @@ export function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "samiul@example.com",
-      link: "mailto:samiul@example.com",
+      value: "samiul.code@gmail.com",
+      link: "mailto:samiul.code@gmail.com",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "/samiulislam",
-      link: "https://linkedin.com",
+      value: "/smdevx",
+      link: "https://www.linkedin.com/in/smdevx/",
     },
     {
       icon: Facebook,
       label: "Facebook",
-      value: "/samiulislam",
-      link: "https://facebook.com",
+      value: "/smdevx",
+      link: "https://www.facebook.com/smdevx",
     },
   ];
 
@@ -109,7 +109,9 @@ export function Contact() {
                   <div className="mb-4 p-4 bg-success/10 rounded-full">
                     <CheckCircle className="w-12 h-12 text-success" />
                   </div>
-                  <h4 className="mb-2 text-success text-xl font-semibold">Message sent successfully!</h4>
+                  <h4 className="mb-2 text-success text-xl font-semibold">
+                    Message sent successfully!
+                  </h4>
                   <p className="text-muted-foreground">
                     Thank you for reaching out. I&apos;ll get back to you soon.
                   </p>
@@ -118,7 +120,10 @@ export function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name Input */}
                   <div>
-                    <label htmlFor="name" className="block mb-2 text-sm font-medium">
+                    <label
+                      htmlFor="name"
+                      className="block mb-2 text-sm font-medium"
+                    >
                       Name
                     </label>
                     <input
@@ -143,7 +148,10 @@ export function Contact() {
 
                   {/* Email Input */}
                   <div>
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium">
+                    <label
+                      htmlFor="email"
+                      className="block mb-2 text-sm font-medium"
+                    >
                       Email
                     </label>
                     <input
@@ -168,7 +176,10 @@ export function Contact() {
 
                   {/* Message Textarea */}
                   <div>
-                    <label htmlFor="message" className="block mb-2 text-sm font-medium">
+                    <label
+                      htmlFor="message"
+                      className="block mb-2 text-sm font-medium"
+                    >
                       Message
                     </label>
                     <textarea
@@ -241,7 +252,9 @@ export function Contact() {
 
               {/* Additional Info */}
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-xl border border-primary/20">
-                <h4 className="mb-3 text-lg font-semibold">Looking for a developer?</h4>
+                <h4 className="mb-3 text-lg font-semibold">
+                  Looking for a developer?
+                </h4>
                 <p className="text-sm text-muted-foreground">
                   I&apos;m currently available for freelance work and full-time
                   opportunities. Let&apos;s discuss how I can help bring your
@@ -255,4 +268,3 @@ export function Contact() {
     </section>
   );
 }
-
