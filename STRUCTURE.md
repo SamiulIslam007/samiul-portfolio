@@ -84,3 +84,4 @@ The mobile menu (`navbar-mobile.tsx`) uses shadcn/ui's Sheet component:
 4. **Accessibility**: ARIA attributes, keyboard navigation
 5. **Responsive**: Mobile-first design approach
 
+

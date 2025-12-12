@@ -183,7 +183,7 @@ export function Hero({ profileImageUrl }: HeroProps) {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-success"></span>
                   </div>
-                  <span className="text-sm">Open to opportunities</span>
+                  <span className="text-sm">Open to work</span>
                 </div>
               </div>
 

@@ -16,3 +16,4 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Contact", href: "#contact", sectionId: "contact" },
 ];
 
+

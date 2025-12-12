@@ -15,3 +15,4 @@ export function scrollToSection(sectionId: string, offset: number = 80) {
   }
 }
 
+
