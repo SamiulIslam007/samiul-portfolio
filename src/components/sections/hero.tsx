@@ -53,7 +53,7 @@ export function Hero({ profileImageUrl }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pb-7 pt-20 overflow-hidden"
+      className="relative min-h-[calc(100vh-5rem)] flex items-center pb-7 overflow-hidden"
     >
       {/* Enhanced Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none"></div>
