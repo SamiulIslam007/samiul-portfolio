@@ -1,7 +1,3 @@
-/**
- * Single source of truth for navigation links
- * Used by both desktop and mobile navigation components
- */
 export interface NavLink {
   label: string;
   href: string;
@@ -15,5 +11,3 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Projects", href: "#projects", sectionId: "projects" },
   { label: "Contact", href: "#contact", sectionId: "contact" },
 ];
-
-

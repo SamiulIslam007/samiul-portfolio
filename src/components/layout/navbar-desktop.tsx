@@ -3,10 +3,6 @@
 import { NAV_LINKS } from "@/lib/constants/nav-links";
 import { scrollToSection } from "@/lib/utils/scroll";
 
-/**
- * Desktop navigation bar component
- * Shows inline navigation links with hover effects
- */
 export function NavbarDesktop() {
   const handleNavClick = (
     e: React.MouseEvent<HTMLButtonElement>,

@@ -13,16 +13,10 @@ const pacifico = Pacifico({
   weight: "400",
 });
 
-/**
- * Main site header component
- * Includes logo, navigation (desktop + mobile), and theme toggle
- * Handles scroll-based styling changes
- */
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -32,9 +26,7 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle theme initialization and changes
   useEffect(() => {
-    // Check for saved theme preference or system preference
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
@@ -72,7 +64,6 @@ export function SiteHeader() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center font-semibold text-xl justify-between h-16 md:h-20">
-          {/* Logo */}
           <button
             onClick={handleLogoClick}
             className={`${pacifico.className} text-xl md:text-2xl tracking-tight font-semibold`}
@@ -80,28 +71,24 @@ export function SiteHeader() {
             Samiul Islam
           </button>
 
-          {/* Desktop Navigation */}
           <NavbarDesktop />
 
-          {/* Right side: Mobile menu + Theme toggle */}
           <div className="flex items-center gap-2">
-            {/* Mobile Navigation */}
-            <NavbarMobile />
-
-            {/* Theme Toggle */}
             <Button
               onClick={() => setDarkMode(!darkMode)}
-              variant="ghost"
+              variant="outline"
               size="icon"
-              className="p-2 rounded-lg"
+              className="rounded-lg p-0"
               aria-label="Toggle theme"
             >
               {darkMode ? (
-                <Sun className="w-5 h-5" />
+                <Sun className="size-6" />
               ) : (
-                <Moon className="w-5 h-5" />
+                <Moon className="size-6" />
               )}
             </Button>
+
+            <NavbarMobile />
           </div>
         </div>
       </div>
