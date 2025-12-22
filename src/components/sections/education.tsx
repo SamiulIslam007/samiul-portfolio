@@ -11,12 +11,10 @@ export function Education() {
       id="education"
       className="py-24 relative overflow-hidden bg-background"
     >
-      {/* Background Decor */}
       <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] -z-10 animate-pulse" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,10 +31,7 @@ export function Education() {
             </p>
           </div>
         </motion.div>
-
-        {/* Education Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-          {/* Vertical Divider for Desktop */}
           <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-[1px] bg-gradient-to-b from-transparent via-border to-transparent -translate-x-1/2" />
 
           {educationData.map((edu, index) => (
@@ -49,10 +44,8 @@ export function Education() {
               className="h-full"
             >
               <div className="group relative h-full bg-card hover:bg-card/80 border border-border/50 rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1 flex flex-col overflow-hidden">
-                {/* Hover Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Card Header: Logo & Title */}
                 <div className="flex items-start gap-5 mb-6 relative z-10">
                   <div className="relative shrink-0 p-3 bg-secondary/30 rounded-xl border border-border shadow-sm group-hover:scale-105 transition-transform duration-300">
                     <Image
@@ -75,7 +68,6 @@ export function Education() {
                   </div>
                 </div>
 
-                {/* Badges Section */}
                 <div className="flex flex-wrap gap-3 mb-6 relative z-10">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground text-xs font-semibold border border-border">
                     <Calendar className="w-3.5 h-3.5" />
@@ -95,7 +87,6 @@ export function Education() {
                   </div>
                 </div>
 
-                {/* Description - Fixed Color Issue */}
                 <div className="relative z-10 mt-auto">
                   <p className="text-muted-foreground text-sm leading-relaxed border-t border-border/50 pt-4">
                     {edu.description}
