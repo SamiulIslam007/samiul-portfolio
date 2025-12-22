@@ -9,8 +9,6 @@ import {
   GraduationCap,
   FolderGit2,
   Mail,
-  Github,
-  Linkedin,
 } from "lucide-react";
 import {
   Sheet,
@@ -21,6 +19,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { NAV_LINKS } from "@/lib/constants/nav-links";
+import { socialLinks } from "@/components/ui/social-links"; // Import social links
 import { scrollToSection } from "@/lib/utils/scroll";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -31,7 +30,6 @@ const pacifico = Pacifico({
   weight: "400",
 });
 
-// আইকন ম্যাপিং
 const iconMap: Record<string, any> = {
   Home: Home,
   About: User,
@@ -68,8 +66,8 @@ export function NavbarMobile() {
 
       <SheetContent
         side="right"
-        // bg-background ব্যবহার করায় লাইট মোডে সাদা এবং ডার্ক মোডে কালো হবে
-        className="w-[300px] sm:w-[400px] border-l border-border bg-background/95 backdrop-blur-xl flex flex-col h-full p-0 shadow-2xl"
+        // Close icon styling override (Bigger & Centered vertically with title)
+        className="w-[300px] sm:w-[400px] border-l border-border bg-background/95 backdrop-blur-xl flex flex-col h-full p-0 shadow-2xl [&>button]:top-6 [&>button]:right-6 [&>button]:bg-secondary/20 hover:[&>button]:bg-red-500/10 [&>button]:rounded-full [&>button]:p-2 [&>button_svg]:size-5 transition-all"
       >
         <SheetHeader className="p-6 border-b border-border/50">
           <SheetTitle className="text-left flex items-center gap-2">
@@ -93,10 +91,8 @@ export function NavbarMobile() {
                     className="group flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-accent transition-all duration-300 w-full text-left active:scale-95"
                   >
                     <span className="p-2 rounded-lg bg-secondary group-hover:bg-background border border-transparent group-hover:border-border transition-colors">
-                      {/* আইকনের কালার text-foreground ব্যবহার করায় সব মোডে দেখা যাবে */}
                       <Icon className="w-5 h-5 text-foreground/70 group-hover:text-primary transition-colors" />
                     </span>
-                    {/* মেইন টেক্সট কালার text-foreground (কালো/সাদা) */}
                     <span className="font-medium text-base tracking-wide text-foreground group-hover:text-primary transition-colors">
                       {link.label}
                     </span>
@@ -108,32 +104,25 @@ export function NavbarMobile() {
         </div>
 
         {/* Footer Section */}
-        <div className="p-6 mt-auto border-t border-border/50 bg-secondary/30">
+        <div className="p-6 mt-auto border-t border-border/50 bg-secondary/10">
           <div className="flex flex-col gap-4">
-            <p className="text-sm text-muted-foreground font-medium">
+            {/* Updated "Connect with me" text styling */}
+            <p className="text-sm font-semibold tracking-wider text-primary/80 uppercase">
               Connect with me
             </p>
+
+            {/* Dynamic Social Links */}
             <div className="flex gap-3">
-              <Link
-                href="https://github.com/SamiulIslam007"
-                target="_blank"
-                className="p-2.5 rounded-full bg-background border border-border text-foreground hover:border-primary hover:text-primary transition-all duration-300 shadow-sm hover:shadow-md"
-              >
-                <Github className="w-5 h-5" />
-              </Link>
-              <Link
-                href="https://linkedin.com/in/your-linkedin"
-                target="_blank"
-                className="p-2.5 rounded-full bg-background border border-border text-foreground hover:border-blue-600 hover:text-blue-600 transition-all duration-300 shadow-sm hover:shadow-md"
-              >
-                <Linkedin className="w-5 h-5" />
-              </Link>
-              <Link
-                href="mailto:your-email@example.com"
-                className="p-2.5 rounded-full bg-background border border-border text-foreground hover:border-red-500 hover:text-red-500 transition-all duration-300 shadow-sm hover:shadow-md"
-              >
-                <Mail className="w-5 h-5" />
-              </Link>
+              {socialLinks.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  className="p-2.5 rounded-full bg-background border border-border text-foreground hover:border-primary hover:text-primary hover:bg-primary/5 transition-all duration-300 shadow-sm hover:shadow-md group"
+                >
+                  <item.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                </Link>
+              ))}
             </div>
           </div>
         </div>
