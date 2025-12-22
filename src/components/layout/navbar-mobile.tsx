@@ -24,6 +24,7 @@ import { scrollToSection } from "@/lib/utils/scroll";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Pacifico } from "next/font/google";
+import { usePathname, useRouter } from "next/navigation";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -41,13 +42,20 @@ const iconMap: Record<string, any> = {
 
 export function NavbarMobile() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLButtonElement>,
-    sectionId: string
+    sectionId: string,
+    href: string
   ) => {
-    e.preventDefault();
-    scrollToSection(sectionId);
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToSection(sectionId);
+    } else {
+      router.push(href);
+    }
     setOpen(false);
   };
 
@@ -86,7 +94,9 @@ export function NavbarMobile() {
               return (
                 <SheetClose key={link.sectionId} asChild>
                   <button
-                    onClick={(e) => handleNavClick(e, link.sectionId)}
+                    onClick={(e) =>
+                      handleNavClick(e, link.sectionId, link.href)
+                    }
                     className="group flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-accent transition-all duration-300 w-full text-left active:scale-95"
                   >
                     <span className="p-2 rounded-lg bg-secondary group-hover:bg-background border border-transparent group-hover:border-border transition-colors">

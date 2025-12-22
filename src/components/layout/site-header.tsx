@@ -7,6 +7,7 @@ import { NavbarMobile } from "./navbar-mobile";
 import { scrollToSection } from "@/lib/utils/scroll";
 import { Button } from "@/components/ui/button";
 import { Pacifico } from "next/font/google";
+import { usePathname, useRouter } from "next/navigation";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -16,6 +17,9 @@ const pacifico = Pacifico({
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,8 +54,12 @@ export function SiteHeader() {
   }, [darkMode]);
 
   const handleLogoClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    scrollToSection("hero");
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToSection("hero");
+    } else {
+      router.push("/");
+    }
   };
 
   return (

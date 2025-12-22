@@ -2,14 +2,23 @@
 
 import { NAV_LINKS } from "@/lib/constants/nav-links";
 import { scrollToSection } from "@/lib/utils/scroll";
+import { usePathname, useRouter } from "next/navigation";
 
 export function NavbarDesktop() {
+  const pathname = usePathname();
+  const router = useRouter();
+
   const handleNavClick = (
     e: React.MouseEvent<HTMLButtonElement>,
-    sectionId: string
+    sectionId: string,
+    href: string
   ) => {
-    e.preventDefault();
-    scrollToSection(sectionId);
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToSection(sectionId);
+    } else {
+      router.push(href);
+    }
   };
 
   return (
@@ -17,7 +26,7 @@ export function NavbarDesktop() {
       {NAV_LINKS.map((link) => (
         <button
           key={link.sectionId}
-          onClick={(e) => handleNavClick(e, link.sectionId)}
+          onClick={(e) => handleNavClick(e, link.sectionId, link.href)}
           className="text-sm hover:text-primary transition-colors relative group"
         >
           {link.label}
