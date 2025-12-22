@@ -3,6 +3,7 @@ import { About } from "@/components/sections/about";
 import { Skills } from "@/components/sections/skills";
 import { Projects } from "@/components/sections/projects";
 import { Contact } from "@/components/sections/contact";
+import { Education } from "@/components/sections/education";
 
 const profileImageUrl = "/portfolio-image/profile.jpeg";
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero profileImageUrl={profileImageUrl} />
       <About />
       <Skills />
+      <Education />
       <Projects />
       <Contact />
     </div>
