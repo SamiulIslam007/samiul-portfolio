@@ -1,9 +1,14 @@
 "use client";
 
-import { Github, Linkedin, Facebook, Heart } from "lucide-react";
 import { scrollToSection } from "@/lib/utils/scroll";
 import { socialLinks } from "../ui/social-links";
 import Link from "next/link";
+import { Pacifico } from "next/font/google";
+
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,16 +25,17 @@ export function Footer() {
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
           <div>
-            <h3 className="mb-4 text-xl font-semibold">Samiul Islam</h3>
+            <h3
+              className={`${pacifico.className} mb-4 text-xl tracking-tight  `}
+            >
+              Samiul Islam
+            </h3>
             <p className="text-sm text-muted-foreground">
               Fullstack Web Developer specializing in building exceptional
               digital experiences with modern web technologies.
             </p>
           </div>
-
-          {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2">
@@ -48,7 +54,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Social Links */}
           <div>
             <h4 className="mb-4 text-lg font-semibold">Connect</h4>
             <div className="flex gap-3">
@@ -68,7 +73,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground text-center sm:text-left">
             &copy; {currentYear} Samiul Islam. All rights reserved.

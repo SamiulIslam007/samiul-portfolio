@@ -19,7 +19,7 @@ import {
   SheetClose,
 } from "@/components/ui/sheet";
 import { NAV_LINKS } from "@/lib/constants/nav-links";
-import { socialLinks } from "@/components/ui/social-links"; // Import social links
+import { socialLinks } from "@/components/ui/social-links";
 import { scrollToSection } from "@/lib/utils/scroll";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -66,7 +66,6 @@ export function NavbarMobile() {
 
       <SheetContent
         side="right"
-        // Close icon styling override (Bigger & Centered vertically with title)
         className="w-[300px] sm:w-[400px] border-l border-border bg-background/95 backdrop-blur-xl flex flex-col h-full p-0 shadow-2xl [&>button]:top-6 [&>button]:right-6 [&>button]:bg-secondary/20 hover:[&>button]:bg-red-500/10 [&>button]:rounded-full [&>button]:p-2 [&>button_svg]:size-5 transition-all"
       >
         <SheetHeader className="p-6 border-b border-border/50">
@@ -102,16 +101,12 @@ export function NavbarMobile() {
             })}
           </nav>
         </div>
-
-        {/* Footer Section */}
         <div className="p-6 mt-auto border-t border-border/50 bg-secondary/10">
           <div className="flex flex-col gap-4">
-            {/* Updated "Connect with me" text styling */}
             <p className="text-sm font-semibold tracking-wider text-primary/80 uppercase">
               Connect with me
             </p>
 
-            {/* Dynamic Social Links */}
             <div className="flex gap-3">
               {socialLinks.map((item) => (
                 <Link
