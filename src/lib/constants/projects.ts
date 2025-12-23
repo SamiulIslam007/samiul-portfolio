@@ -12,14 +12,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "todo-app",
-    title: "Task Management System",
-    description: "Collaborative tool with kanban boards and team chat",
-    image: "https://images.unsplash.com/photo-1651129522359-ce483a8263a7?...",
-    tags: ["Next.js", "WebSocket", "MongoDB", "Tailwind"],
-    tech: ["Next.js", "TypeScript", "MongoDB"],
-    features: ["Auth", "CRUD", "Responsive UI"],
-    live: "https://todo.samiul.vercel.app",
-    github: "https://github.com/samiul/todo-app",
+    slug: "dcit-club-website",
+    title: "Dhaka College IT Club",
+    description:
+      "A comprehensive platform for Dhaka College IT Club to manage events and showcase innovations.",
+    image: "/projects/dcit-club.png",
+    tags: ["Next.js", "Tailwind", "Typescript", "Dark Mode"],
+    tech: ["Next.js", "TypeScript", "Tailwind", "Framer Motion", "Shadcn UI"],
+    features: ["Event Management", "Member Directory", "Responsive Design"],
+    live: "https://dcitweb.vercel.app",
+    github: "",
   },
 ];
