@@ -11,25 +11,27 @@ type Skill = {
 const skills: Skill[] = [
   // Frontend
   { name: "React", level: 95, category: "frontend" },
-  { name: "Next.js", level: 92, category: "frontend" },
+  { name: "Next.js", level: 90, category: "frontend" },
   { name: "TypeScript", level: 90, category: "frontend" },
-  { name: "Tailwind CSS", level: 93, category: "frontend" },
+  { name: "Tailwind CSS", level: 95, category: "frontend" },
   // Backend
   { name: "Node.js", level: 90, category: "backend" },
-  { name: "Express.js", level: 86, category: "backend" },
+  { name: "Express.js", level: 85, category: "backend" },
   { name: "REST APIs", level: 94, category: "backend" },
   { name: "GraphQL", level: 80, category: "backend" },
-  { name: "PostgreSQL", level: 86, category: "backend" },
-  { name: "MongoDB", level: 83, category: "backend" },
+  { name: "PostgreSQL", level: 85, category: "backend" },
+  { name: "MongoDB", level: 85, category: "backend" },
   // DevOps / Tools
   { name: "Git & GitHub", level: 92, category: "devops" },
-  { name: "Docker", level: 78, category: "devops" },
+  { name: "Docker", level: 80, category: "devops" },
   { name: "CI/CD", level: 80, category: "devops" },
   { name: "Vercel", level: 90, category: "devops" },
   // Languages
   { name: "JavaScript (ES6+)", level: 94, category: "language" },
   { name: "TypeScript", level: 90, category: "language" },
   { name: "Python", level: 70, category: "language" },
+  { name: "C", level: 40, category: "language" },
+  { name: "C++", level: 30, category: "language" },
 ];
 
 const categoryMeta: Record<
