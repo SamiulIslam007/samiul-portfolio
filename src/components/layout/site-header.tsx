@@ -43,7 +43,6 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    // Update theme
     if (darkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");

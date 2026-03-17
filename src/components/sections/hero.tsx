@@ -14,8 +14,8 @@ export function Hero({ profileImageUrl }: HeroProps) {
   const [displayedName, setDisplayedName] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullName = "Samiul Islam.";
-  const typingSpeed = 130; // milliseconds per character
-  const pauseBeforeRestart = 1500; // pause at the end before restarting
+  const typingSpeed = 130;
+  const pauseBeforeRestart = 1500;
 
   useEffect(() => {
     if (currentIndex < fullName.length) {
@@ -26,7 +26,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
 
       return () => clearTimeout(timeout);
     } else {
-      // Pause at the end, then restart
       const timeout = setTimeout(() => {
         setDisplayedName("");
         setCurrentIndex(0);
@@ -55,12 +54,10 @@ export function Hero({ profileImageUrl }: HeroProps) {
       id="hero"
       className="relative min-h-[calc(100vh-5rem)] flex items-center pb-7 overflow-hidden"
     >
-      {/* Enhanced Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none"></div>
       <div className="absolute top-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse"></div>
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
 
-      {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div
           className="absolute inset-0"
@@ -73,7 +70,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          {/* Left Content */}
           <div className="lg:col-span-7 text-center lg:text-left">
             <div className="mb-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 border border-primary/20">
@@ -95,7 +91,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
               </h1>
             </div>
 
-            {/* Role Pills */}
             <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-6">
               <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-full shadow-sm">
                 <Code2 className="w-4 h-4 text-primary" />
@@ -113,7 +108,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
               thinking.
             </p>
 
-            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <button
                 onClick={() => scrollToSection("projects")}
@@ -130,7 +124,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
               </button>
             </div>
 
-            {/* Social Icons */}
             <div className="flex gap-4 justify-center lg:justify-start">
               {socialLinks.map(({ name, href, icon: Icon }) => (
                 <Link
@@ -147,13 +140,10 @@ export function Hero({ profileImageUrl }: HeroProps) {
             </div>
           </div>
 
-          {/* Right Content - Enhanced Profile Image */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md">
-              {/* Glowing background effects */}
               <div className="absolute inset-0 bg-gradient-to-tr from-primary via-primary/50 to-transparent rounded-2xl blur-3xl opacity-30 animate-pulse"></div>
 
-              {/* Decorative rings */}
               <div
                 className="absolute inset-0 rounded-2xl border-2 border-primary/20 animate-pulse"
                 style={{ animationDuration: "3s" }}
@@ -163,7 +153,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
                 style={{ animationDuration: "4s", animationDelay: "0.5s" }}
               ></div>
 
-              {/* Main image container */}
               <div className="relative">
                 <div className="relative overflow-hidden rounded-2xl border-4 border-card shadow-2xl">
                   <Image
@@ -173,11 +162,9 @@ export function Hero({ profileImageUrl }: HeroProps) {
                     alt="Samiul Islam - Fullstack Developer & Cyber Security Specialist"
                     className="w-full h-auto object-cover aspect-[3/4]"
                   />
-                  {/* Gradient overlay for depth */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
                 </div>
 
-                {/* Floating badge */}
                 <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 px-6 py-3 bg-card border border-primary/50 rounded-full shadow-xl backdrop-blur-sm flex items-center gap-2">
                   <div className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"></span>
@@ -187,7 +174,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
                 </div>
               </div>
 
-              {/* Decorative floating elements */}
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
               <div
                 className="absolute -bottom-6 -left-6 w-24 h-24 bg-primary/15 rounded-full blur-2xl animate-pulse"
@@ -198,7 +184,6 @@ export function Hero({ profileImageUrl }: HeroProps) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
         <div className="flex flex-col items-center gap-2 text-muted-foreground animate-bounce">
           <span className="text-xs">Scroll to explore</span>

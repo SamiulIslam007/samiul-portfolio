@@ -30,14 +30,12 @@ export function About() {
   return (
     <section id="about" className="py-20 lg:py-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="mb-4 text-3xl md:text-4xl font-bold">About Me</h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Content - Text */}
           <div className="lg:col-span-7">
             <h3 className="mb-6 text-2xl md:text-3xl font-semibold">
               Get to Know Me
@@ -67,7 +65,6 @@ export function About() {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-6 mt-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center lg:text-left">
@@ -82,7 +79,6 @@ export function About() {
             </div>
           </div>
 
-          {/* Right Content - Strength Cards */}
           <div className="lg:col-span-5">
             <div className="space-y-4">
               {strengths.map((strength, index) => (
@@ -107,7 +103,6 @@ export function About() {
               ))}
             </div>
 
-            {/* Specialization Badge */}
             <div className="mt-6 p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/20">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-primary rounded-lg">

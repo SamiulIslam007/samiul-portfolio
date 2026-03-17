@@ -53,12 +53,10 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* ─── Hero Banner ─── */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-4 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
         <div className="absolute bottom-10 left-10 w-56 h-56 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-        {/* Dot grid */}
         <div
           className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
@@ -124,16 +122,30 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ─── Filter Tabs ─── */}
       <section className="sticky top-20 z-30 bg-background/80 backdrop-blur-lg border-b border-border/50 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
             {CATEGORIES.map((cat) => {
-              const count =
-                cat === "All"
-                  ? projects.length
-                  : projects.filter((p) => p.category === cat.toLowerCase())
+              const count = (() => {
+                switch (cat) {
+                  case "All":
+                    return projects.length;
+                  case "Fullstack":
+                    return projects.filter((p) => p.category === "fullstack")
                       .length;
+                  case "Frontend":
+                    return projects.filter((p) => Boolean(p.frontendRepo))
+                      .length;
+                  case "Backend":
+                    return projects.filter((p) => Boolean(p.backendRepo))
+                      .length;
+                  case "Mobile App":
+                    return projects.filter((p) => p.category === "mobile")
+                      .length;
+                  default:
+                    return projects.length;
+                }
+              })();
 
               return (
                 <button
@@ -162,7 +174,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ─── Projects Grid ─── */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {filtered.length === 0 ? (
@@ -177,7 +188,6 @@ export default function ProjectsPage() {
                   key={project.slug}
                   className="group relative bg-card rounded-2xl border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 overflow-hidden flex flex-col"
                 >
-                  {/* Image */}
                   <div className="relative h-52 overflow-hidden bg-secondary">
                     <ImageWithFallback
                       src={project.image}
@@ -185,8 +195,6 @@ export default function ProjectsPage() {
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/90 via-card/20 to-transparent" />
-
-                    {/* Category badge */}
                     <div className="absolute top-4 left-4">
                       <span
                         className={`px-3 py-1 text-xs font-semibold rounded-full border capitalize ${
@@ -197,16 +205,12 @@ export default function ProjectsPage() {
                         {project.category}
                       </span>
                     </div>
-
-                    {/* Year badge */}
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 text-xs font-medium rounded-full bg-background/80 backdrop-blur-sm border border-border text-muted-foreground">
                         {project.year}
                       </span>
                     </div>
                   </div>
-
-                  {/* Content */}
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-start justify-between mb-3">
                       <h2 className="text-xl font-bold group-hover:text-primary transition-colors">
@@ -224,8 +228,6 @@ export default function ProjectsPage() {
                     <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
                       {project.shortDescription}
                     </p>
-
-                    {/* Tech stack */}
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tech.slice(0, 5).map((t) => (
                         <span
@@ -242,7 +244,6 @@ export default function ProjectsPage() {
                       )}
                     </div>
 
-                    {/* Action buttons */}
                     <div className="mt-auto flex flex-wrap gap-2">
                       {project.liveUrl && (
                         <a
@@ -296,7 +297,6 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* ─── CTA Banner ─── */}
       <section className="py-20 bg-secondary/30">
         <div className="max-w-3xl mx-auto px-4 text-center space-y-6">
           <h2 className="text-3xl font-bold">

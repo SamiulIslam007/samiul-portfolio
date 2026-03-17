@@ -19,7 +19,6 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 lg:py-32 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="mb-4 text-3xl md:text-4xl font-bold">
             Featured Projects
@@ -31,14 +30,12 @@ export function Projects() {
           </p>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featured.map((project) => (
             <div
               key={project.slug}
               className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5 flex flex-col"
             >
-              {/* Image */}
               <div className="relative h-48 overflow-hidden bg-secondary">
                 <ImageWithFallback
                   src={project.image}
@@ -47,7 +44,6 @@ export function Projects() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-transparent to-transparent" />
 
-                {/* Category */}
                 <div className="absolute top-3 left-3">
                   <span
                     className={`px-2.5 py-1 text-xs font-semibold rounded-full border capitalize ${
@@ -59,7 +55,6 @@ export function Projects() {
                   </span>
                 </div>
 
-                {/* View details overlay button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <Link
                     href={`/projects/${project.slug}`}
@@ -71,7 +66,6 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-5 flex flex-col flex-1">
                 <div className="flex items-start justify-between mb-2">
                   <h3 className="text-lg font-bold group-hover:text-primary transition-colors leading-tight">
@@ -86,7 +80,6 @@ export function Projects() {
                   {project.shortDescription}
                 </p>
 
-                {/* Tech tags */}
                 <div className="flex flex-wrap gap-1.5 mb-5">
                   {project.tags.map((tag) => (
                     <span
@@ -98,7 +91,6 @@ export function Projects() {
                   ))}
                 </div>
 
-                {/* Action links */}
                 <div className="mt-auto flex flex-wrap gap-2 pt-3 border-t border-border/50">
                   {project.liveUrl && (
                     <a
@@ -146,13 +138,11 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Bottom accent line */}
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-primary/30 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </div>
           ))}
         </div>
 
-        {/* View All CTA */}
         <div className="text-center mt-14">
           <Link
             href="/projects"

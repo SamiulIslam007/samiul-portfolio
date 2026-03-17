@@ -42,7 +42,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* ─── Hero ─── */}
       <div className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 pointer-events-none" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
@@ -74,7 +73,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
             {project.shortDescription}
           </p>
 
-          {/* Quick action buttons */}
           <div className="flex flex-wrap gap-3">
             {project.liveUrl && (
               <a
@@ -116,9 +114,7 @@ export default async function ProjectDetail({ params }: { params: Params }) {
         </div>
       </div>
 
-      {/* ─── Main Content ─── */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
-        {/* Project image */}
         <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-border/50 shadow-xl bg-secondary mb-12">
           <Image
             src={project.image}
@@ -132,9 +128,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* ─── Left: description + features ─── */}
-          <div className="lg:col-span-2 space-y-10">
-            {/* Overview */}
             <div>
               <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                 <span className="w-1 h-7 bg-primary rounded-full" />
@@ -145,7 +138,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
               </p>
             </div>
 
-            {/* Key Features */}
             <div>
               <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
                 <span className="w-1 h-7 bg-primary rounded-full" />
@@ -166,7 +158,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
               </ul>
             </div>
 
-            {/* Tags */}
             <div>
               <h2 className="text-lg font-semibold mb-3 flex items-center gap-2 text-muted-foreground">
                 <Tag className="w-4 h-4" />
@@ -185,11 +176,8 @@ export default async function ProjectDetail({ params }: { params: Params }) {
             </div>
           </div>
 
-          {/* ─── Right: sidebar ─── */}
           <div className="space-y-6">
-            {/* Sticky card */}
             <div className="sticky top-24 p-6 rounded-2xl border border-border bg-card shadow-sm space-y-6">
-              {/* Links */}
               <div>
                 <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
                   Links
@@ -254,7 +242,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
                 </div>
               </div>
 
-              {/* Tech Stack */}
               <div>
                 <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2">
                   <Layers className="w-4 h-4" />
@@ -272,7 +259,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
                 </div>
               </div>
 
-              {/* Meta */}
               <div className="pt-4 border-t border-border space-y-2">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Year</span>
@@ -291,7 +277,6 @@ export default async function ProjectDetail({ params }: { params: Params }) {
           </div>
         </div>
 
-        {/* ─── Other Projects ─── */}
         {otherProjects.length > 0 && (
           <div className="mt-20 pt-12 border-t border-border">
             <div className="flex items-center justify-between mb-8">

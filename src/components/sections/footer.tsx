@@ -42,7 +42,6 @@ export function Footer() {
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
-          {/* Brand */}
           <div>
             <h3 className={`${pacifico.className} mb-3 text-xl tracking-tight`}>
               Samiul Islam
@@ -67,7 +66,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Quick Links
@@ -95,7 +93,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Projects */}
           <div>
             <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Projects

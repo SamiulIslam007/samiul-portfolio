@@ -115,4 +115,42 @@ export const projects: Project[] = [
     year: "2025",
     featured: true,
   },
+  {
+    slug: "samiul-healthcare-system",
+    title: "Samiul Healthcare System",
+    shortDescription:
+      "Role-based healthcare management platform with separate access for Admins, Doctors & Patients.",
+    description:
+      "Samiul Healthcare System is a full-featured healthcare management backend that powers role-based experiences for Admins, Doctors, and Patients. It handles user authentication, role management, appointments, prescriptions, and payments on top of a relational PostgreSQL database. Built with TypeScript, Express.js, and Prisma ORM for a robust, type-safe, and scalable API layer.",
+    image: "/projects/samiul-healthcare-system.png",
+    tags: ["TypeScript", "Express.js", "Prisma ORM", "PostgreSQL"],
+    tech: [
+      "TypeScript",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "REST API",
+      "JWT Auth",
+      "Zod",
+      "bcrypt",
+      "dotenv",
+    ],
+    features: [
+      "Role-based access for Admin, Doctor & Patient",
+      "User management with secure authentication & authorization",
+      "Doctor & patient profiles linked to a central user model",
+      "Appointment scheduling between doctors and patients",
+      "Prescription management tied to appointments",
+      "Payment tracking with status & method enums",
+      "PostgreSQL + Prisma schema designed for healthcare workflows",
+      "Environment-based configuration with .env support",
+    ],
+    frontendRepo: "",
+    backendRepo:
+      "https://github.com/SamiulIslam007/samiul-healthcare-system-backend",
+    liveUrl: "",
+    category: "backend",
+    year: "2026",
+    featured: true,
+  },
 ];

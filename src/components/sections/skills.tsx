@@ -4,29 +4,25 @@ import { useMemo } from "react";
 
 type Skill = {
   name: string;
-  level: number; // 0-100
+  level: number;
   category: "frontend" | "backend" | "devops" | "language" | "other";
 };
 
 const skills: Skill[] = [
-  // Frontend
   { name: "React", level: 95, category: "frontend" },
   { name: "Next.js", level: 90, category: "frontend" },
   { name: "TypeScript", level: 90, category: "frontend" },
   { name: "Tailwind CSS", level: 95, category: "frontend" },
-  // Backend
   { name: "Node.js", level: 90, category: "backend" },
   { name: "Express.js", level: 85, category: "backend" },
   { name: "REST APIs", level: 94, category: "backend" },
   { name: "GraphQL", level: 80, category: "backend" },
   { name: "PostgreSQL", level: 85, category: "backend" },
   { name: "MongoDB", level: 85, category: "backend" },
-  // DevOps / Tools
   { name: "Git & GitHub", level: 92, category: "devops" },
   { name: "Docker", level: 80, category: "devops" },
   { name: "CI/CD", level: 80, category: "devops" },
   { name: "Vercel", level: 90, category: "devops" },
-  // Languages
   { name: "JavaScript (ES6+)", level: 94, category: "language" },
   { name: "TypeScript", level: 90, category: "language" },
   { name: "Python", level: 70, category: "language" },
@@ -79,11 +75,9 @@ export function Skills() {
       byCategory[skill.category].push(skill);
     }
 
-    // sort each category descending by level
     (Object.keys(byCategory) as Skill["category"][]).forEach((key) => {
       byCategory[key].sort((a, b) => b.level - a.level);
     });
-
     return byCategory;
   }, []);
 
@@ -105,7 +99,6 @@ export function Skills() {
   return (
     <section id="skills" className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm">
             <span className="relative flex h-2 w-2">
@@ -127,7 +120,6 @@ export function Skills() {
           </p>
         </div>
 
-        {/* Skill Graphs */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           {(Object.keys(grouped) as Skill["category"][])
             .filter((key) => grouped[key].length > 0 && key !== "other")
@@ -140,7 +132,6 @@ export function Skills() {
                   key={key}
                   className="relative group rounded-2xl border border-border/60 bg-card/80 backdrop-blur-sm overflow-hidden hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
                 >
-                  {/* gradient edge */}
                   <div
                     className={`pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${meta.accent}`}
                   />
@@ -194,7 +185,6 @@ export function Skills() {
             })}
         </div>
 
-        {/* Additional Skills as Pills */}
         <div className="mt-14">
           <h4 className="text-center mb-6 text-lg md:text-xl font-semibold">
             Supporting Technologies

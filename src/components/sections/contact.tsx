@@ -21,7 +21,6 @@ export function Contact() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -52,11 +51,9 @@ export function Contact() {
     e.preventDefault();
 
     if (validateForm()) {
-      // Mock form submission
       console.log("Form submitted:", formData);
       setSubmitted(true);
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({ name: "", email: "", message: "" });
         setSubmitted(false);
@@ -88,7 +85,6 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="mb-4 text-3xl md:text-4xl font-bold">Contact</h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
@@ -99,7 +95,6 @@ export function Contact() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Contact Form */}
           <div className="lg:col-span-7">
             <div className="bg-card p-8 rounded-xl border border-border shadow-lg">
               <h3 className="mb-6 text-2xl font-semibold">Send me a message</h3>
@@ -118,7 +113,6 @@ export function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name Input */}
                   <div>
                     <label
                       htmlFor="name"
@@ -146,7 +140,6 @@ export function Contact() {
                     )}
                   </div>
 
-                  {/* Email Input */}
                   <div>
                     <label
                       htmlFor="email"
@@ -174,7 +167,6 @@ export function Contact() {
                     )}
                   </div>
 
-                  {/* Message Textarea */}
                   <div>
                     <label
                       htmlFor="message"
@@ -202,7 +194,6 @@ export function Contact() {
                     )}
                   </div>
 
-                  {/* Submit Button */}
                   <button
                     type="submit"
                     className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 flex items-center justify-center gap-2 group"
@@ -215,7 +206,6 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Contact Info */}
           <div className="lg:col-span-5">
             <div className="space-y-6">
               <div className="bg-card p-8 rounded-xl border border-border">
@@ -250,7 +240,6 @@ export function Contact() {
                 </div>
               </div>
 
-              {/* Additional Info */}
               <div className="bg-gradient-to-br from-primary/10 to-primary/5 p-8 rounded-xl border border-primary/20">
                 <h4 className="mb-3 text-lg font-semibold">
                   Looking for a developer?
