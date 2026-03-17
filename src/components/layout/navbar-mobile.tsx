@@ -18,7 +18,7 @@ import {
   SheetTitle,
   SheetClose,
 } from "@/components/ui/sheet";
-import { NAV_LINKS } from "@/lib/constants/nav-links";
+import { NAV_LINKS, NavLink } from "@/lib/constants/nav-links";
 import { socialLinks } from "@/components/ui/social-links";
 import { scrollToSection } from "@/lib/utils/scroll";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,7 @@ const pacifico = Pacifico({
   weight: "400",
 });
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ElementType> = {
   Home: Home,
   About: User,
   Skills: Cpu,
@@ -47,14 +47,15 @@ export function NavbarMobile() {
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLButtonElement>,
-    sectionId: string,
-    href: string
+    link: NavLink
   ) => {
-    if (pathname === "/") {
+    if (link.isRoute) {
+      router.push(link.href);
+    } else if (pathname === "/") {
       e.preventDefault();
-      scrollToSection(sectionId);
+      scrollToSection(link.sectionId);
     } else {
-      router.push(href);
+      router.push(link.href);
     }
     setOpen(false);
   };
@@ -90,19 +91,34 @@ export function NavbarMobile() {
           <nav className="flex flex-col gap-2">
             {NAV_LINKS.map((link) => {
               const Icon = iconMap[link.label] || Home;
+              const isActive = link.isRoute ? pathname === link.href : false;
 
               return (
                 <SheetClose key={link.sectionId} asChild>
                   <button
-                    onClick={(e) =>
-                      handleNavClick(e, link.sectionId, link.href)
-                    }
-                    className="group flex items-center gap-4 px-4 py-3.5 rounded-xl hover:bg-accent transition-all duration-300 w-full text-left active:scale-95"
+                    onClick={(e) => handleNavClick(e, link)}
+                    className={`group flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300 w-full text-left active:scale-95 ${
+                      isActive
+                        ? "bg-primary/10 text-primary"
+                        : "hover:bg-accent"
+                    }`}
                   >
-                    <span className="p-2 rounded-lg bg-secondary group-hover:bg-background border border-transparent group-hover:border-border transition-colors">
-                      <Icon className="w-5 h-5 text-foreground/70 group-hover:text-primary transition-colors" />
+                    <span
+                      className={`p-2 rounded-lg border transition-colors ${
+                        isActive
+                          ? "bg-primary text-primary-foreground border-primary"
+                          : "bg-secondary group-hover:bg-background border-transparent group-hover:border-border"
+                      }`}
+                    >
+                      <Icon className={`w-5 h-5 ${isActive ? "" : "text-foreground/70 group-hover:text-primary"} transition-colors`} />
                     </span>
-                    <span className="font-medium text-base tracking-wide text-foreground group-hover:text-primary transition-colors">
+                    <span
+                      className={`font-medium text-base tracking-wide transition-colors ${
+                        isActive
+                          ? "text-primary"
+                          : "text-foreground group-hover:text-primary"
+                      }`}
+                    >
                       {link.label}
                     </span>
                   </button>
@@ -111,12 +127,12 @@ export function NavbarMobile() {
             })}
           </nav>
         </div>
+
         <div className="p-6 mt-auto border-t border-border/50 bg-secondary/10">
           <div className="flex flex-col gap-4">
             <p className="text-sm font-semibold tracking-wider text-primary/80 uppercase">
               Connect with me
             </p>
-
             <div className="flex gap-3">
               {socialLinks.map((item) => (
                 <Link

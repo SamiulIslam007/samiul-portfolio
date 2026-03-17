@@ -8,44 +8,56 @@ This document outlines the modular folder structure of the portfolio website.
 samiul-portfolio/
 ├── src/
 │   ├── app/                          # Next.js App Router
-│   │   ├── layout.tsx                 # Root layout with header/footer
-│   │   ├── page.tsx                  # Home page
-│   │   └── globals.css               # Global styles & Tailwind
+│   │   ├── layout.tsx                # Root layout with header/footer
+│   │   ├── page.tsx                  # Home page (single scroll)
+│   │   ├── globals.css               # Global styles & Tailwind
+│   │   └── projects/
+│   │       ├── page.tsx              # All projects listing (/projects)
+│   │       └── [slug]/
+│   │           └── page.tsx          # Project detail page (/projects/:slug)
 │   │
 │   ├── components/
-│   │   ├── layout/                    # Layout components
+│   │   ├── layout/
 │   │   │   ├── site-header.tsx       # Main header (logo, nav, theme)
-│   │   │   ├── navbar-desktop.tsx   # Desktop navigation
+│   │   │   ├── navbar-desktop.tsx    # Desktop navigation
 │   │   │   └── navbar-mobile.tsx     # Mobile menu (Sheet)
 │   │   │
-│   │   ├── sections/                 # Page sections
+│   │   ├── sections/
 │   │   │   ├── hero.tsx              # Hero section
 │   │   │   ├── about.tsx             # About section
 │   │   │   ├── skills.tsx            # Skills section
-│   │   │   ├── projects.tsx          # Projects showcase
-│   │   │   ├── contact.tsx            # Contact form
+│   │   │   ├── education.tsx         # Education section
+│   │   │   ├── projects.tsx          # Featured projects preview
+│   │   │   ├── contact.tsx           # Contact form
 │   │   │   └── footer.tsx            # Footer
 │   │   │
-│   │   └── ui/                       # shadcn/ui components
+│   │   └── ui/
 │   │       ├── button.tsx
 │   │       ├── sheet.tsx             # Mobile menu drawer
 │   │       ├── image-with-fallback.tsx
-│   │       ├── utils.ts               # cn() utility
+│   │       ├── social-links.ts       # Social media links data
+│   │       ├── utils.ts              # cn() utility
 │   │       └── use-mobile.ts         # Mobile breakpoint hook
 │   │
 │   └── lib/
 │       ├── constants/
-│       │   └── nav-links.ts           # Navigation links (single source of truth)
+│       │   ├── nav-links.ts          # Navigation links (supports isRoute)
+│       │   ├── projects.ts           # All project data (type + array)
+│       │   └── education.ts          # Education data
+│       ├── hooks/
+│       │   └── use-typewriter.ts     # Typewriter effect hook
 │       └── utils/
-│           ├── scroll.ts              # Scroll utilities
-│           └── cn.ts                  # className utility
+│           ├── scroll.ts             # Smooth scroll utility
+│           └── cn.ts                 # className merge utility
 │
-├── public/                            # Static assets
-├── next.config.js                     # Next.js configuration
-├── tailwind.config.ts                 # Tailwind configuration
-├── tsconfig.json                      # TypeScript configuration
-├── postcss.config.js                  # PostCSS configuration
-└── package.json                      # Dependencies
+├── public/
+│   ├── portfolio-image/              # Profile & institution logos
+│   └── projects/                     # Project screenshots
+├── next.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── postcss.config.js
+└── package.json
 ```
 
 ## Key Features
