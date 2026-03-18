@@ -41,7 +41,7 @@ export default function ProjectsPage() {
       case "Fullstack":
         return p.category === "fullstack";
       case "Frontend":
-        return Boolean(p.frontendRepo);
+        return Boolean(p.frontendRepo) || p.category === "frontend";
       case "Backend":
         return Boolean(p.backendRepo);
       case "Mobile App":
@@ -105,7 +105,7 @@ export default function ProjectsPage() {
               </span>
               <span className="flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-purple-500" />
-                {projects.filter((p) => Boolean(p.frontendRepo)).length}{" "}
+                {projects.filter((p) => Boolean(p.frontendRepo) || p.category === "frontend").length}{" "}
                 Frontend
               </span>
               <span className="flex items-center gap-1.5">
@@ -134,7 +134,7 @@ export default function ProjectsPage() {
                     return projects.filter((p) => p.category === "fullstack")
                       .length;
                   case "Frontend":
-                    return projects.filter((p) => Boolean(p.frontendRepo))
+                    return projects.filter((p) => Boolean(p.frontendRepo) || p.category === "frontend")
                       .length;
                   case "Backend":
                     return projects.filter((p) => Boolean(p.backendRepo))

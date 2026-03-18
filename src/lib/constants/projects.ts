@@ -100,7 +100,13 @@ export const projects: Project[] = [
       "A comprehensive platform for Dhaka College IT Club to manage events, showcase innovations, and maintain a member directory. Built with Next.js and TypeScript for a fast, accessible, and responsive experience, enhanced with smooth Framer Motion animations and full dark/light mode support.",
     image: "/projects/dcit-club.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Dark Mode"],
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Shadcn UI",
+    ],
     features: [
       "Event management & showcase",
       "Member directory",
@@ -108,7 +114,7 @@ export const projects: Project[] = [
       "Framer Motion page animations",
       "Fully responsive design",
     ],
-    frontendRepo: "",
+    frontendRepo: "https://github.com/SamiulIslam007/Dhaka-College-IT-Club",
     backendRepo: "",
     liveUrl: "https://dcitweb.vercel.app",
     category: "frontend",
